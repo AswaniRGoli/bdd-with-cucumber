@@ -14,7 +14,10 @@ public class Hooks {
 
     @After()
     public void tearDown() {
-        if(this.testManager.getDriver() != null)
+        if(this.testManager.getDriver() != null) {
             this.testManager.getDriver().close();
+            this.testManager.getDriver().quit();
+            this.testManager.resetDriver();
+        }
     }
 }

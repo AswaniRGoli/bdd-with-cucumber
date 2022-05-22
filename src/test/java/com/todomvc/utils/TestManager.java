@@ -10,7 +10,7 @@ import java.io.IOException;
 import java.util.Properties;
 
 public class TestManager {
-    private final WebDriver driver;
+    private static WebDriver driver;
 
     private final Properties properties;
 
@@ -22,13 +22,19 @@ public class TestManager {
             throw new RuntimeException(e);
         }
 
-        WebDriverManager.chromedriver().setup();
-        ChromeOptions chromeOptions = new ChromeOptions();
-        this.driver = new ChromeDriver(chromeOptions);
+        if(driver == null) {
+            WebDriverManager.chromedriver().setup();
+            ChromeOptions chromeOptions = new ChromeOptions();
+            driver = new ChromeDriver(chromeOptions);
+        }
     }
 
     public WebDriver getDriver() {
         return driver;
+    }
+
+    public void resetDriver(){
+        driver = null;
     }
 
     public Properties getProperties() {

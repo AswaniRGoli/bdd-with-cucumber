@@ -6,10 +6,13 @@ git clone https://github.com/AswaniRGoli/bdd-with-cucumber.git
 ```
 ## Test
 Follow below steps to execute tests:
+
+> Pre-requisite: **OpenJDK 17** + **Maven** installed and ENV variables set.
+
 - Using Maven
 ```
 cd bdd-with-cucumber
-mvn install test
+mvn test
 ```
 - Using Runner class `CucumberRunnerTest.java`. Update tags in runner class to execute a specific test case
 ```Java
