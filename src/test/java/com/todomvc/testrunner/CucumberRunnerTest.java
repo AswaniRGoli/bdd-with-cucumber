@@ -1,5 +1,6 @@
 package com.todomvc.testrunner;
 
+
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 import org.junit.runner.RunWith;
@@ -8,9 +9,9 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features={"src/test/resources/features"},
         glue={"com.todomvc.stepdefinitions"},
-        // tags={""},
+        plugin = {"pretty", "html:target/cucumber-reports.html", "json:target/cucumber-reports.json"},
         monochrome = true,
-        plugin = {"pretty","html:target/cucumber-html-reports", "json:target/cucumber-html-reports/cucumber.json"}
+        tags="@test"
 )
 public class CucumberRunnerTest {
 }
