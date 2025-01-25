@@ -36,12 +36,12 @@
         </dependency>
 
         <!-- JUnit -->
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter</artifactId>
-            <version>5.10.0</version>
-            <scope>test</scope>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.junit.jupiter</groupId>-->
+<!--            <artifactId>junit-jupiter</artifactId>-->
+<!--            <version>5.10.0</version>-->
+<!--            <scope>test</scope>-->
+<!--        </dependency>-->
 
     </dependencies>
 
@@ -52,6 +52,13 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.1.2</version>
+                <configuration>
+                    <!-- Enable parallel execution -->
+<!--                    <testSourceDirectory>mvcbdd/src/main/java</testSourceDirectory>-->
+                    <includes>
+                        <include>**/TestRunnerTest.java</include>
+                    </includes>
+                </configuration>
             </plugin>
         </plugins>
     </build>

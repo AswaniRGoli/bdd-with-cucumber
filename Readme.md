@@ -19,7 +19,7 @@ mvn test
 @RunWith(Cucumber.class)
 @CucumberOptions(
         features={"src/test/resources/features"},
-        glue={"com.todomvc.stepdefinitions"},
+        glue={"stepdefinitions"},
         tags={""},
         monochrome = true,
         plugin = {"pretty","html:target/cucumber-html-reports", "json:target/cucumber-html-reports/cucumber.json"}

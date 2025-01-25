@@ -1,22 +1,16 @@
-package com.todomvc.pages;
-
-import com.todomvc.utils.TestManager;
-import org.openqa.selenium.*;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
+package pages;
 
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.Properties;
 
 public class TodoPage extends BasePage{
 
 private Properties properties;
 
-    public TodoPage() {
+    public TodoPage() throws MalformedURLException {
         super(BasePage.getDriver());
         properties = new Properties();
         try {
@@ -26,7 +20,13 @@ private Properties properties;
         }
     }
 
-    public void launchURL(){
+    public void launchURL() throws MalformedURLException {
         getDriver().get(properties.getProperty("env.baseurl"));
+        // URL of the Selenium Grid Hub
+        //URL gridUrl = new URL("http://localhost:4444");
+
+
+
+
     }
 }

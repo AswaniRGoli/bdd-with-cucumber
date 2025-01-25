@@ -1,30 +1,25 @@
-package com.todomvc.stepdefinitions;
+package stepdefinitions;
 
-import com.todomvc.pages.BasePage;
-import com.todomvc.pages.TodoPage;
-import com.todomvc.utils.TestManager;
+import pages.BasePage;
+import pages.TodoPage;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
-import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
-import org.junit.Assert;
-import org.openqa.selenium.InvalidArgumentException;
 import org.openqa.selenium.WebDriver;
 
-import java.util.List;
+import java.net.MalformedURLException;
 
 public class ToDoStepDefinitions {
 
    private WebDriver driver;
    private TodoPage todoPage;
 
-    public ToDoStepDefinitions(){
+    public ToDoStepDefinitions() throws MalformedURLException {
         this.driver = BasePage.getDriver();
         this.todoPage = new TodoPage();
     }
 
     @Given("the user login to the application")
-    public void TheUserLoginToTheApplication(){
+    public void TheUserLoginToTheApplication() throws MalformedURLException {
         todoPage.launchURL();
     }
 
